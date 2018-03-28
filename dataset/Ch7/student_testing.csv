@@ -1,0 +1,12 @@
+student_id,study,study_group,age_group,GPA_old,major_grade,business_grade,computer_grade,finance_grade,total_grade
+712,BANGKOK,GENERAL_EDU,<=20,Good,Bad,Good,Bad,Bad,Bad
+713,BANGKOK,GENERAL_EDU,21-25,Bad,Good,Good,Bad,Bad,Bad
+714,BANGKOK,VOCATIONAL_EDU,<=20,Good,Good,Bad,Bad,Good,Good
+715,NA,VOCATIONAL_EDU,21-25,Bad,Good,Good,Good,Good,Bad
+716,BANGKOK,VOCATIONAL_EDU,<=20,Bad,Bad,Good,Good,Good,Good
+717,UPCOUNTRY,VOCATIONAL_EDU,21-25,Normal,Good,Bad,Good,Bad,Good
+718,UPCOUNTRY,VOCATIONAL_EDU,26-30,Good,Bad,Bad,Good,Bad,Good
+719,BANGKOK,GENERAL_EDU,<=20,Good,Bad,Bad,Good,Good,Good
+720,BANGKOK,VOCATIONAL_EDU,21-25,Good,Bad,Good,Good,Bad,Good
+721,BANGKOK,VOCATIONAL_EDU,<=20,Good,Good,Bad,Good,Good,Good
+722,UPCOUNTRY,VOCATIONAL_EDU,21-25,Normal,Good,Bad,Good,Good,Bad

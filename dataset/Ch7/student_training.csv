@@ -1,4 +1,4 @@
-student_id,study,study,age,GPA_old,major_grade,business_grade,computer_grade,finance_grade,total_grade,major
+student_id,study,study_group,age_group,GPA_old,major_grade,business_grade,computer_grade,finance_grade,total_grade,major
 1,BANGKOK,VOCATIONAL_EDU,<=20,Normal,Good,Good,Bad,Good,Bad,computer
 2,BANGKOK,VOCATIONAL_EDU,26-30,Normal,Good,Good,Good,Bad,Good,marketing
 3,UPCOUNTRY,VOCATIONAL_EDU,21-25,Good,Good,Good,Bad,Bad,Good,management

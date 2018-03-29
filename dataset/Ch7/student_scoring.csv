@@ -1,4 +1,4 @@
-Student_ID,Study,Rank_study_group,Age_group,GPA_old_group,Rank_grade_major,Rank_grade_business,Rank_grade_computer,Rank_grade_finance,Rank_grade_total
+student_id,study,study_group,age_group,GPA_old,major_grade,business_grade,computer_grade,finance_grade,total_grade
 1001,BANGKOK,VOCATIONAL_EDU,<=20,Normal,Good,Good,Bad,Good,Bad
 1002,BANGKOK,VOCATIONAL_EDU,26-30,Normal,Good,Good,Good,Bad,Good
 1003,UPCOUNTRY,VOCATIONAL_EDU,21-25,Good,Good,Good,Bad,Bad,Good

@@ -1,0 +1,6 @@
+sentence|sentiment
+So there is no way for me to plug it in here in the US unless I go by a converter.|Negative
+Good case, Excellent value.|Positive
+Great for the jawbone.|Positive
+Tied to charger for conversations lasting more than 45 minutes.MAJOR PROBLEMS!!|Negative
+The mic is great.|Positive

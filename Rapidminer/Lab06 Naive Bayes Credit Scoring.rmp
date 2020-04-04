@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.6.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.6.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_csv" compatibility="9.6.000" expanded="true" height="68" name="Read CSV" width="90" x="313" y="34">
+        <parameter key="csv_file" value="C:\Users\tan\Desktop\credit_training.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="true"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="starting_row" value="1"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="infinity_representation" value=""/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="true"/>
+        <list key="annotations"/>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="x-windows-874"/>
+        <parameter key="read_all_values_as_polynominal" value="false"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="CUSTOMER_ID.true.integer.id"/>
+          <parameter key="1" value="CHK_ACCT.true.polynominal.attribute"/>
+          <parameter key="2" value="DURATION.true.integer.attribute"/>
+          <parameter key="3" value="NEW_CAR.true.polynominal.attribute"/>
+          <parameter key="4" value="USED_CAR.true.polynominal.attribute"/>
+          <parameter key="5" value="FURNITURE.true.polynominal.attribute"/>
+          <parameter key="6" value="RADIO/TV.true.polynominal.attribute"/>
+          <parameter key="7" value="EDUCATION.true.polynominal.attribute"/>
+          <parameter key="8" value="RETRAINING.true.polynominal.attribute"/>
+          <parameter key="9" value="AMOUNT.true.integer.attribute"/>
+          <parameter key="10" value="SAV_ACCT.true.polynominal.attribute"/>
+          <parameter key="11" value="EMPLOYMENT.true.polynominal.attribute"/>
+          <parameter key="12" value="INSTALL_RATE.true.integer.attribute"/>
+          <parameter key="13" value="MALE_DIV.true.polynominal.attribute"/>
+          <parameter key="14" value="MALE_SINGLE.true.polynominal.attribute"/>
+          <parameter key="15" value="MALE_MAR_or_WID.true.polynominal.attribute"/>
+          <parameter key="16" value="CO-APPLICANT.true.polynominal.attribute"/>
+          <parameter key="17" value="GUARANTOR.true.polynominal.attribute"/>
+          <parameter key="18" value="PRESENT_RESIDENT.true.polynominal.attribute"/>
+          <parameter key="19" value="REAL_ESTATE.true.polynominal.attribute"/>
+          <parameter key="20" value="PROP_UNKN_NONE.true.polynominal.attribute"/>
+          <parameter key="21" value="AGE.true.integer.attribute"/>
+          <parameter key="22" value="OTHER_INSTALL.true.polynominal.attribute"/>
+          <parameter key="23" value="RENT.true.polynominal.attribute"/>
+          <parameter key="24" value="OWN_RES.true.polynominal.attribute"/>
+          <parameter key="25" value="NUM_CREDITS.true.integer.attribute"/>
+          <parameter key="26" value="JOB.true.polynominal.attribute"/>
+          <parameter key="27" value="NUM_DEPENDENTS.true.integer.attribute"/>
+          <parameter key="28" value="TELEPHONE.true.polynominal.attribute"/>
+          <parameter key="29" value="FOREIGN.true.polynominal.attribute"/>
+          <parameter key="30" value="RESPONSE.true.polynominal.label"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="false"/>
+        <parameter key="datamanagement" value="double_array"/>
+        <parameter key="data_management" value="auto"/>
+      </operator>
+      <operator activated="true" class="concurrency:cross_validation" compatibility="9.6.000" expanded="true" height="145" name="Validation" width="90" x="514" y="34">
+        <parameter key="split_on_batch_attribute" value="false"/>
+        <parameter key="leave_one_out" value="false"/>
+        <parameter key="number_of_folds" value="10"/>
+        <parameter key="sampling_type" value="stratified sampling"/>
+        <parameter key="use_local_random_seed" value="false"/>
+        <parameter key="local_random_seed" value="1992"/>
+        <parameter key="enable_parallel_execution" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="naive_bayes" compatibility="9.6.000" expanded="true" height="82" name="Naive Bayes" width="90" x="179" y="34">
+            <parameter key="laplace_correction" value="true"/>
+          </operator>
+          <connect from_port="training set" to_op="Naive Bayes" to_port="training set"/>
+          <connect from_op="Naive Bayes" from_port="model" to_port="model"/>
+          <portSpacing port="source_training set" spacing="0"/>
+          <portSpacing port="sink_model" spacing="0"/>
+          <portSpacing port="sink_through 1" spacing="0"/>
+          <description align="left" color="green" colored="true" height="80" resized="true" width="248" x="37" y="158">In the training phase, a model is built on the current training data set. (90 % of data by default, 10 times)</description>
+        </process>
+        <process expanded="true">
+          <operator activated="true" class="apply_model" compatibility="9.6.000" expanded="true" height="82" name="Apply Model" width="90" x="45" y="34">
+            <list key="application_parameters"/>
+            <parameter key="create_view" value="false"/>
+          </operator>
+          <operator activated="true" class="performance" compatibility="9.6.000" expanded="true" height="82" name="Performance" width="90" x="179" y="34">
+            <parameter key="use_example_weights" value="true"/>
+          </operator>
+          <connect from_port="model" to_op="Apply Model" to_port="model"/>
+          <connect from_port="test set" to_op="Apply Model" to_port="unlabelled data"/>
+          <connect from_op="Apply Model" from_port="labelled data" to_op="Performance" to_port="labelled data"/>
+          <connect from_op="Performance" from_port="performance" to_port="performance 1"/>
+          <connect from_op="Performance" from_port="example set" to_port="test set results"/>
+          <portSpacing port="source_model" spacing="0"/>
+          <portSpacing port="source_test set" spacing="0"/>
+          <portSpacing port="source_through 1" spacing="0"/>
+          <portSpacing port="sink_test set results" spacing="0"/>
+          <portSpacing port="sink_performance 1" spacing="0"/>
+          <portSpacing port="sink_performance 2" spacing="0"/>
+          <description align="left" color="blue" colored="true" height="103" resized="true" width="315" x="38" y="158">The model created in the Training step is applied to the current test set (10 %).&lt;br/&gt;The performance is evaluated and sent to the operator results.</description>
+        </process>
+        <description align="center" color="transparent" colored="false" width="126">A cross-validation evaluating a decision tree model.</description>
+      </operator>
+      <operator activated="true" class="read_csv" compatibility="9.6.000" expanded="true" height="68" name="Read CSV (2)" width="90" x="380" y="289">
+        <parameter key="csv_file" value="C:\Users\tan\Desktop\credit_scoring.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="true"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="starting_row" value="1"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="infinity_representation" value=""/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="true"/>
+        <list key="annotations"/>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="x-windows-874"/>
+        <parameter key="read_all_values_as_polynominal" value="false"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="CUSTOMER_ID.true.integer.id"/>
+          <parameter key="1" value="CHK_ACCT.true.polynominal.attribute"/>
+          <parameter key="2" value="DURATION.true.integer.attribute"/>
+          <parameter key="3" value="NEW_CAR.true.polynominal.attribute"/>
+          <parameter key="4" value="USED_CAR.true.polynominal.attribute"/>
+          <parameter key="5" value="FURNITURE.true.polynominal.attribute"/>
+          <parameter key="6" value="RADIO/TV.true.polynominal.attribute"/>
+          <parameter key="7" value="EDUCATION.true.polynominal.attribute"/>
+          <parameter key="8" value="RETRAINING.true.polynominal.attribute"/>
+          <parameter key="9" value="AMOUNT.true.integer.attribute"/>
+          <parameter key="10" value="SAV_ACCT.true.polynominal.attribute"/>
+          <parameter key="11" value="EMPLOYMENT.true.polynominal.attribute"/>
+          <parameter key="12" value="INSTALL_RATE.true.integer.attribute"/>
+          <parameter key="13" value="MALE_DIV.true.polynominal.attribute"/>
+          <parameter key="14" value="MALE_SINGLE.true.polynominal.attribute"/>
+          <parameter key="15" value="MALE_MAR_or_WID.true.polynominal.attribute"/>
+          <parameter key="16" value="CO-APPLICANT.true.polynominal.attribute"/>
+          <parameter key="17" value="GUARANTOR.true.polynominal.attribute"/>
+          <parameter key="18" value="PRESENT_RESIDENT.true.polynominal.attribute"/>
+          <parameter key="19" value="REAL_ESTATE.true.polynominal.attribute"/>
+          <parameter key="20" value="PROP_UNKN_NONE.true.polynominal.attribute"/>
+          <parameter key="21" value="AGE.true.integer.attribute"/>
+          <parameter key="22" value="OTHER_INSTALL.true.polynominal.attribute"/>
+          <parameter key="23" value="RENT.true.polynominal.attribute"/>
+          <parameter key="24" value="OWN_RES.true.polynominal.attribute"/>
+          <parameter key="25" value="NUM_CREDITS.true.integer.attribute"/>
+          <parameter key="26" value="JOB.true.polynominal.attribute"/>
+          <parameter key="27" value="NUM_DEPENDENTS.true.integer.attribute"/>
+          <parameter key="28" value="TELEPHONE.true.polynominal.attribute"/>
+          <parameter key="29" value="FOREIGN.true.polynominal.attribute"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="false"/>
+        <parameter key="datamanagement" value="double_array"/>
+        <parameter key="data_management" value="auto"/>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="9.6.000" expanded="true" height="82" name="Apply Model (2)" width="90" x="715" y="238">
+        <list key="application_parameters"/>
+        <parameter key="create_view" value="false"/>
+      </operator>
+      <connect from_op="Read CSV" from_port="output" to_op="Validation" to_port="example set"/>
+      <connect from_op="Validation" from_port="model" to_op="Apply Model (2)" to_port="model"/>
+      <connect from_op="Validation" from_port="performance 1" to_port="result 1"/>
+      <connect from_op="Read CSV (2)" from_port="output" to_op="Apply Model (2)" to_port="unlabelled data"/>
+      <connect from_op="Apply Model (2)" from_port="labelled data" to_port="result 2"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+    </process>
+  </operator>
+</process>

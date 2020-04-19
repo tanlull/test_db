@@ -1,0 +1,5 @@
+1. Goto :  cd %userprofile%\.RapidMiner\extensions
+2. copy to the directory
+	2.1 Text Processing : rmx_text-ANY-9.3.1.jar
+	2.2 Aylien : rmx_com.aylien.textapi.rapidminer-ANY-0.2.0.jar
+3. Restart Rapidminer Studio

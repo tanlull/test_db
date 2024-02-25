@@ -1,0 +1,31 @@
+﻿row_number,transction_year,transction_month,project_province_name_th,project_province_name_en,project_district_name_th,project_district_name_en,project_propertytype_name_th,project_propertytype_name_en,volume_of_sale,day
+11,2023,2,กรุงเทพมหานคร,Bangkok,พระโขนง,PHRA KHANONG,คอนโด,Condo,13,2023-08-31
+30,2023,2,สมุทรปราการ,Samut Prakan,บางพลี,BANG PHLI,บ้าน,Detached House,16,2023-08-31
+19,2023,2,นนทบุรี,Nonthaburi,บางบัวทอง,BANG BUA THONG,คอนโด,Condo,11,2023-08-31
+9,2023,2,กรุงเทพมหานคร,Bangkok,ราชเทวี,RATCHATHEWI,คอนโด,Condo,21,2023-08-31
+14,2023,2,สมุทรปราการ,Samut Prakan,เมืองสมุทรปราการ,MUEANG SAMUT PRAKAN,คอนโด,Condo,58,2023-08-31
+12,2023,2,นนทบุรี,Nonthaburi,เมืองนนทบุรี,MUEANG NONTHABURI,คอนโด,Condo,251,2023-08-31
+6,2023,2,กรุงเทพมหานคร,Bangkok,บางซื่อ,BANG SUE,คอนโด,Condo,19,2023-08-31
+18,2023,2,สมุทรปราการ,Samut Prakan,บางพลี,BANG PHLI,คอนโด,Condo,17,2023-08-31
+26,2023,2,สมุทรปราการ,Samut Prakan,เมืองสมุทรปราการ,MUEANG SAMUT PRAKAN,ทาวน์โฮม,Townhome,17,2023-08-31
+15,2023,2,กรุงเทพมหานคร,Bangkok,คลองสาน,KHLONG SAN,คอนโด,Condo,25,2023-08-31
+22,2023,2,สมุทรปราการ,Samut Prakan,บางพลี,BANG PHLI,ทาวน์โฮม,Townhome,26,2023-08-31
+29,2023,2,นนทบุรี,Nonthaburi,เมืองนนทบุรี,MUEANG NONTHABURI,ทาวน์โฮม,Townhome,19,2023-08-31
+13,2023,2,กรุงเทพมหานคร,Bangkok,จตุจักร,CHATUCHAK,คอนโด,Condo,36,2023-08-31
+3,2023,2,กรุงเทพมหานคร,Bangkok,คลองเตย,KHLONG TOEI,คอนโด,Condo,28,2023-08-31
+24,2023,2,กรุงเทพมหานคร,Bangkok,บึงกุ่ม,BUENG KUM,ทาวน์โฮม,Townhome,12,2023-08-31
+23,2023,2,กรุงเทพมหานคร,Bangkok,สวนหลวง,SUAN LUANG,ทาวน์โฮม,Townhome,14,2023-08-31
+17,2023,2,กรุงเทพมหานคร,Bangkok,สวนหลวง,SUAN LUANG,คอนโด,Condo,21,2023-08-31
+5,2023,2,กรุงเทพมหานคร,Bangkok,ห้วยขวาง,HUAI KHWANG,คอนโด,Condo,33,2023-08-31
+2,2023,2,นนทบุรี,Nonthaburi,ปากเกร็ด,PAK KRET,คอนโด,Condo,77,2023-08-31
+27,2023,2,นนทบุรี,Nonthaburi,บางบัวทอง,BANG BUA THONG,บ้าน,Detached House,12,2023-08-31
+21,2023,2,กรุงเทพมหานคร,Bangkok,ภาษีเจริญ,PHASI CHAROEN,คอนโด,Condo,11,2023-08-31
+1,2023,2,กรุงเทพมหานคร,Bangkok,บางพลัด,BANG PHLAT,คอนโด,Condo,14,2023-08-31
+10,2023,2,กรุงเทพมหานคร,Bangkok,บางกะปิ,BANG KAPI,คอนโด,Condo,20,2023-08-31
+16,2023,2,กรุงเทพมหานคร,Bangkok,ธนบุรี,THON BURI,คอนโด,Condo,11,2023-08-31
+20,2023,2,กรุงเทพมหานคร,Bangkok,วัฒนา,VADHANA,คอนโด,Condo,50,2023-08-31
+25,2023,2,นนทบุรี,Nonthaburi,บางบัวทอง,BANG BUA THONG,ทาวน์โฮม,Townhome,15,2023-08-31
+8,2023,2,กรุงเทพมหานคร,Bangkok,บางนา,BANG NA,คอนโด,Condo,19,2023-08-31
+4,2023,2,กรุงเทพมหานคร,Bangkok,ยานนาวา,YAN NAWA,คอนโด,Condo,17,2023-08-31
+28,2023,2,นนทบุรี,Nonthaburi,บางใหญ่,BANG YAI,บ้าน,Detached House,11,2023-08-31
+7,2023,2,กรุงเทพมหานคร,Bangkok,บางรัก,BANG RAK,คอนโด,Condo,26,2023-08-31

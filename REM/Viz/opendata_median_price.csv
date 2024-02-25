@@ -1,0 +1,52 @@
+﻿row_number,transction_year,transction_month,project_province_name_en,project_province_name_th,project_district_name_th,project_district_name_en,project_propertytype_name_th,project_propertytype_name_en,total_listing,median_asking_price_sqm,day
+16,2023,2,Bangkok,กรุงเทพมหานคร,ประเวศ,PRAWET,คอนโด,Condo,15,53368,2023-08-31
+8,2023,2,Bangkok,กรุงเทพมหานคร,บางคอแหลม,BANG KHO LAEM,คอนโด,Condo,13,140106,2023-08-31
+31,2023,2,Bangkok,กรุงเทพมหานคร,ปทุมวัน,PATHUM WAN,คอนโด,Condo,12,177943,2023-08-31
+42,2023,2,Nonthaburi,นนทบุรี,บางใหญ่,BANG YAI,บ้าน,Detached House,12,27836,2023-08-31
+22,2023,2,Nonthaburi,นนทบุรี,ปากเกร็ด,PAK KRET,คอนโด,Condo,80,61322,2023-08-31
+43,2023,2,Samut Prakan,สมุทรปราการ,บางพลี,BANG PHLI,บ้าน,Detached House,23,33140,2023-08-31
+1,2023,2,Bangkok,กรุงเทพมหานคร,สวนหลวง,SUAN LUANG,คอนโด,Condo,40,69144,2023-08-31
+27,2023,2,Samut Prakan,สมุทรปราการ,เมืองสมุทรปราการ,MUEANG SAMUT PRAKAN,คอนโด,Condo,86,64264,2023-08-31
+18,2023,2,Nonthaburi,นนทบุรี,เมืองนนทบุรี,MUEANG NONTHABURI,คอนโด,Condo,267,58437,2023-08-31
+3,2023,2,Bangkok,กรุงเทพมหานคร,บางซื่อ,BANG SUE,คอนโด,Condo,39,91362,2023-08-31
+35,2023,2,Nonthaburi,นนทบุรี,บางใหญ่,BANG YAI,ทาวน์โฮม,Townhome,12,25181,2023-08-31
+39,2023,2,Bangkok,กรุงเทพมหานคร,ดอนเมือง,DON MUEANG,บ้าน,Detached House,13,28226,2023-08-31
+23,2023,2,Bangkok,กรุงเทพมหานคร,บางพลัด,BANG PHLAT,คอนโด,Condo,22,72764,2023-08-31
+13,2023,2,Samut Prakan,สมุทรปราการ,บางพลี,BANG PHLI,คอนโด,Condo,24,58501,2023-08-31
+15,2023,2,Bangkok,กรุงเทพมหานคร,พญาไท,PHAYA THAI,คอนโด,Condo,20,105718,2023-08-31
+21,2023,2,Bangkok,กรุงเทพมหานคร,วัฒนา,VADHANA,คอนโด,Condo,65,174781,2023-08-31
+5,2023,2,Bangkok,กรุงเทพมหานคร,ธนบุรี,THON BURI,คอนโด,Condo,22,78893,2023-08-31
+45,2023,2,Bangkok,กรุงเทพมหานคร,สายไหม,SAI MAI,ทาวน์โฮม,Townhome,14,22290,2023-08-31
+11,2023,2,Bangkok,กรุงเทพมหานคร,คลองเตย,KHLONG TOEI,คอนโด,Condo,43,166869,2023-08-31
+44,2023,2,Samut Prakan,สมุทรปราการ,เมืองสมุทรปราการ,MUEANG SAMUT PRAKAN,ทาวน์โฮม,Townhome,25,30075,2023-08-31
+48,2023,2,Bangkok,กรุงเทพมหานคร,สวนหลวง,SUAN LUANG,ทาวน์โฮม,Townhome,23,415559,2023-08-31
+46,2023,2,Bangkok,กรุงเทพมหานคร,บางแค,BANG KHAE,ทาวน์โฮม,Townhome,14,24420,2023-08-31
+41,2023,2,Nonthaburi,นนทบุรี,บางบัวทอง,BANG BUA THONG,ทาวน์โฮม,Townhome,26,24432,2023-08-31
+51,2023,2,Bangkok,กรุงเทพมหานคร,คลองสามวา,KHLONG SAM WA,ทาวน์โฮม,Townhome,17,24850,2023-08-31
+7,2023,2,Bangkok,กรุงเทพมหานคร,ภาษีเจริญ,PHASI CHAROEN,คอนโด,Condo,22,59504,2023-08-31
+6,2023,2,Bangkok,กรุงเทพมหานคร,ดินแดง,DIN DAENG,คอนโด,Condo,20,99962,2023-08-31
+50,2023,2,Samut Prakan,สมุทรปราการ,เมืองสมุทรปราการ,MUEANG SAMUT PRAKAN,บ้าน,Detached House,15,23687,2023-08-31
+12,2023,2,Bangkok,กรุงเทพมหานคร,บางกอกใหญ่,BANGKOK YAI,คอนโด,Condo,11,74325,2023-08-31
+33,2023,2,Bangkok,กรุงเทพมหานคร,บางแค,BANG KHAE,คอนโด,Condo,11,54229,2023-08-31
+36,2023,2,Pathum Thani,ปทุมธานี,ลำลูกกา,LAM LUK KA,ทาวน์โฮม,Townhome,16,27267,2023-08-31
+9,2023,2,Bangkok,กรุงเทพมหานคร,ราษฎร์บูรณะ,RAT BURANA,คอนโด,Condo,12,48457,2023-08-31
+34,2023,2,Bangkok,กรุงเทพมหานคร,ประเวศ,PRAWET,ทาวน์โฮม,Townhome,13,32584,2023-08-31
+14,2023,2,Bangkok,กรุงเทพมหานคร,บางกะปิ,BANG KAPI,คอนโด,Condo,31,62772,2023-08-31
+47,2023,2,Bangkok,กรุงเทพมหานคร,บึงกุ่ม,BUENG KUM,ทาวน์โฮม,Townhome,26,27771,2023-08-31
+29,2023,2,Bangkok,กรุงเทพมหานคร,วังทองหลาง,WANG THONGLANG,คอนโด,Condo,12,73347,2023-08-31
+32,2023,2,Nonthaburi,นนทบุรี,บางบัวทอง,BANG BUA THONG,คอนโด,Condo,15,55929,2023-08-31
+4,2023,2,Bangkok,กรุงเทพมหานคร,จอมทอง,CHOM THONG,คอนโด,Condo,13,64177,2023-08-31
+49,2023,2,Nonthaburi,นนทบุรี,บางกรวย,BANG KRUAI,บ้าน,Detached House,12,26863,2023-08-31
+38,2023,2,Samut Prakan,สมุทรปราการ,บางพลี,BANG PHLI,ทาวน์โฮม,Townhome,38,29715,2023-08-31
+19,2023,2,Bangkok,กรุงเทพมหานคร,จตุจักร,CHATUCHAK,คอนโด,Condo,66,107975,2023-08-31
+20,2023,2,Bangkok,กรุงเทพมหานคร,บางนา,BANG NA,คอนโด,Condo,42,61613,2023-08-31
+2,2023,2,Bangkok,กรุงเทพมหานคร,ราชเทวี,RATCHATHEWI,คอนโด,Condo,28,161118,2023-08-31
+37,2023,2,Nonthaburi,นนทบุรี,เมืองนนทบุรี,MUEANG NONTHABURI,ทาวน์โฮม,Townhome,27,25803,2023-08-31
+40,2023,2,Nonthaburi,นนทบุรี,บางบัวทอง,BANG BUA THONG,บ้าน,Detached House,13,20923,2023-08-31
+28,2023,2,Bangkok,กรุงเทพมหานคร,คลองสาน,KHLONG SAN,คอนโด,Condo,34,114049,2023-08-31
+30,2023,2,Bangkok,กรุงเทพมหานคร,ห้วยขวาง,HUAI KHWANG,คอนโด,Condo,69,98954,2023-08-31
+26,2023,2,Bangkok,กรุงเทพมหานคร,พระโขนง,PHRA KHANONG,คอนโด,Condo,27,81088,2023-08-31
+24,2023,2,Bangkok,กรุงเทพมหานคร,ยานนาวา,YAN NAWA,คอนโด,Condo,31,87835,2023-08-31
+25,2023,2,Bangkok,กรุงเทพมหานคร,บึงกุ่ม,BUENG KUM,คอนโด,Condo,12,49638,2023-08-31
+10,2023,2,Bangkok,กรุงเทพมหานคร,สาทร,SATHON,คอนโด,Condo,19,108426,2023-08-31
+17,2023,2,Bangkok,กรุงเทพมหานคร,บางรัก,BANG RAK,คอนโด,Condo,37,109404,2023-08-31

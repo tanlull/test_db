@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Spaceship Battle</title>
+    <style>
+        body { background-color: black; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        canvas { border: 2px solid white; }
+        #score, #gameOver { color: white; font-family: 'Courier New', Courier, monospace; position: absolute; top: 20px; font-size: 20px; }
+        #gameOver { font-size: 30px; top: 100px; text-align: center; }
+        #restart { color: cyan; text-align: center; font-size: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="score">Score: 0</div>
+    <div id="gameOver" style="display: none;">Game Over</div>
+    <div id="restart" style="display: none;" onclick="restartGame()">Click to Restart</div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        let score = 0;
+        let level = 1;
+        let gameOver = false;
+
+        // Spaceship
+        const spaceship = {
+            x: canvas.width / 2,
+            y: canvas.height - 40,
+            width: 40,
+            height: 40,
+            speed: 5,
+            dx: 0,
+            color: 'cyan',
+        };
+
+        // Laser
+        const lasers = [];
+        const laserSpeed = 5;
+
+        // Enemy
+        const enemies = [];
+        let enemySpeed = 2;
+        const enemySize = 40;
+        
+        // Event listeners
+        document.addEventListener('keydown', moveShip);
+        document.addEventListener('keyup', stopShip);
+
+        function moveShip(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'a') spaceship.dx = -spaceship.speed;
+            if (e.key === 'ArrowRight' || e.key === 'd') spaceship.dx = spaceship.speed;
+            if (e.key === ' ' || e.key === 'Enter') fireLaser();
+        }
+
+        function stopShip(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'ArrowRight' || e.key === 'd') spaceship.dx = 0;
+        }
+
+        // Fire Laser
+        function fireLaser() {
+            if (gameOver) return; // Disable firing after game over
+            lasers.push({
+                x: spaceship.x + spaceship.width / 2 - 2,
+                y: spaceship.y,
+                width: 4,
+                height: 20,
+                color: 'red',
+            });
+        }
+
+        // Enemy Generation
+        function createEnemy() {
+            const enemy = {
+                x: Math.random() * (canvas.width - enemySize),
+                y: -enemySize,
+                width: enemySize,
+                height: enemySize,
+                color: 'red',
+            };
+            enemies.push(enemy);
+        }
+
+        // Collision Detection
+        function detectCollisions() {
+            // Check laser collision with enemies
+            for (let i = 0; i < lasers.length; i++) {
+                for (let j = 0; j < enemies.length; j++) {
+                    const laser = lasers[i];
+                    const enemy = enemies[j];
+                    if (laser.x < enemy.x + enemy.width &&
+                        laser.x + laser.width > enemy.x &&
+                        laser.y < enemy.y + enemy.height &&
+                        laser.y + laser.height > enemy.y) {
+                        enemies.splice(j, 1);
+                        lasers.splice(i, 1);
+                        score += 10;
+                        break;
+                    }
+                }
+            }
+
+            // Check collision with spaceship
+            for (let enemy of enemies) {
+                if (spaceship.x < enemy.x + enemy.width &&
+                    spaceship.x + spaceship.width > enemy.x &&
+                    spaceship.y < enemy.y + enemy.height &&
+                    spaceship.y + spaceship.height > enemy.y) {
+                    endGame();
+                    break;
+                }
+            }
+        }
+
+        // Level Up
+        function levelUp() {
+            if (score >= level * 100) {
+                level++;
+                enemySpeed += 0.5; // Increase enemy speed with each level
+            }
+        }
+
+        // Game Over
+        function endGame() {
+            gameOver = true;
+            document.getElementById('gameOver').style.display = 'block';
+            document.getElementById('restart').style.display = 'block';
+        }
+
+        // Restart Game
+        function restartGame() {
+            gameOver = false;
+            score = 0;
+            level = 1;
+            enemySpeed = 2;
+            enemies.length = 0;
+            lasers.length = 0;
+            spaceship.x = canvas.width / 2;
+            spaceship.y = canvas.height - 40;
+            document.getElementById('gameOver').style.display = 'none';
+            document.getElementById('restart').style.display = 'none';
+            update();
+        }
+
+        // Update Game
+        function update() {
+            if (gameOver) return; // Stop the game loop when game is over
+
+            // Move spaceship
+            spaceship.x += spaceship.dx;
+
+            // Prevent spaceship from going out of bounds
+            if (spaceship.x < 0) spaceship.x = 0;
+            if (spaceship.x + spaceship.width > canvas.width) spaceship.x = canvas.width - spaceship.width;
+
+            // Move lasers
+            for (let i = 0; i < lasers.length; i++) {
+                lasers[i].y -= laserSpeed;
+                if (lasers[i].y < 0) lasers.splice(i, 1);
+            }
+
+            // Move enemies
+            for (let i = 0; i < enemies.length; i++) {
+                enemies[i].y += enemySpeed;
+                if (enemies[i].y > canvas.height) enemies.splice(i, 1);
+            }
+
+            detectCollisions();
+            levelUp();
+
+            // Create new enemies
+            if (Math.random() < 0.02) {
+                createEnemy();
+            }
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw spaceship
+            ctx.fillStyle = spaceship.color;
+            ctx.fillRect(spaceship.x, spaceship.y, spaceship.width, spaceship.height);
+
+            // Draw lasers
+            ctx.fillStyle = 'red';
+            for (let laser of lasers) {
+                ctx.fillRect(laser.x, laser.y, laser.width, laser.height);
+            }
+
+            // Draw enemies
+            ctx.fillStyle = 'red';
+            for (let enemy of enemies) {
+                ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+            }
+
+            // Update score and level
+            document.getElementById('score').textContent = `Score: ${score} | Level: ${level}`;
+
+            // Repeat game loop
+            requestAnimationFrame(update);
+        }
+
+        // Start the game
+        update();
+    </script>
+</body>
+</html>
